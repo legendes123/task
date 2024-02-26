@@ -21,11 +21,12 @@ const TextAria = () => {
         sx={{
           position: "absolute",
           opacity: "50%",
-          left: "480px",
-          top: "900px",
+          left: "50%",
+          top: "75%",
+          transform: "translate(-50%, -50%)",
         }}
       >
-        <Image src={svgIcon2} alt="My SVG" />
+        <Image style={{ width: "100%" }} src={svgIcon2} alt="My SVG" />
       </Box>
       <div data-aos="fade-down" data-aos-duration="1000">
         <Grid
@@ -45,7 +46,7 @@ const TextAria = () => {
             },
           }}
         >
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex", margin: "0 auto" }}>
             <Typography
               sx={{
                 fontFamily: "Forum",
@@ -63,12 +64,17 @@ const TextAria = () => {
             <Typography
               sx={{
                 fontFamily: "Forum",
-                fontSize: "92px",
                 fontsWeight: "400",
                 lineHeight: "83px",
                 letterSpacing: "0em",
                 textAlign: "center",
                 color: "#5C5C70",
+                fontSize: {
+                  lg: 92,
+                  md: 70,
+                  sm: 50,
+                  xs: 30,
+                },
               }}
             >
               ой на мотоцикле
@@ -141,17 +147,21 @@ const TextAria = () => {
             alignItems="center"
             sx={{ marginTop: "100px" }}
           >
-            {data.map((elem: description) => {
+            {data.map((elem: string) => {
               return (
-                <Box sx={{ width: "450px" }}>
+                <Box
+                  sx={{
+                    width: "450px",
+                  }}
+                >
                   <Typography
                     sx={{
                       fontFamily: "EB Garamond",
-                      fontSize: "20px",
                       fontWeight: "400",
                       lineHeight: "32px",
                       letterSpacing: "0em",
                       textAlign: "left",
+                      fontSize: "20px",
                     }}
                   >
                     {elem}

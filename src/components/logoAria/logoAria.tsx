@@ -2,11 +2,15 @@ import React from "react";
 import Box from "@mui/material/Box";
 import TimeLine from "@/components/timeLine/timeLine";
 import Image from "next/image";
-import svgIcon from "@/svg/Tsoy/tsoy-fnl-2.svg";
-import svgIcon2 from "@/svg/icon/icon.svg";
+// @ts-ignore
+// import { ReactComponent as MyIcon } from "@/svg/Tsoy/tsoy-fnl-2.svg";
+import svgIconTsoy from "@/svg/Tsoy/tsoy-fnl-2.svg";
 
-import { Grid } from "@mui/material";
+import svgIconChangeColor from "@/svg/icon/icon.svg";
+
+import {CardMedia, Grid} from "@mui/material";
 import Typography from "@mui/material/Typography";
+
 
 const LogoAria = () => {
   return (
@@ -14,9 +18,11 @@ const LogoAria = () => {
       <Box sx={{ maxWidth: "8px" }}>
         <TimeLine />
       </Box>
-      <Box sx={{ ml: "500px", width: "1000px", height: "950px" }}>
-        <Image width={1000} height={950} src={svgIcon} alt="My SVG" />
-      </Box>
+        <Image style={{
+            width: "100%",
+            position:'fixed',
+        }} src={svgIconTsoy} alt="My SVG" />
+
       <Grid
         sx={{ mt: "200px", display: "flex", position: "absolute", right: "600px" }}
         direction="row"
@@ -24,7 +30,7 @@ const LogoAria = () => {
         alignItems="center"
       >
         <Box>
-          <Image src={svgIcon2} alt="My SVG" />
+          <Image src={svgIconChangeColor} alt="My SVG" />
         </Box>
         <Typography
           ml={2}
